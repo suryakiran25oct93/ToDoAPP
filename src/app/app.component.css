@@ -1,0 +1,19 @@
+td{
+    background: lightgreen;
+    padding: 5px;
+}
+th{
+    background: brown;
+    color: white;
+    padding: 5px;
+}
+input,textarea{
+    height: 40px;
+    width: 300px;
+}
+button{
+    height: 40px;
+    width: 100px;
+    background:brown;
+    color:white;
+}

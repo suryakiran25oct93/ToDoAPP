@@ -1,0 +1,57 @@
+<h2>{{title}}</h2>
+<font>Add a Task</font><br><br>
+<input #task type="text"  placeholder="Enter Task"><br><br>
+<input #desc type="text"  placeholder="Enter Description"><br><br>
+<input #prt type="number" min=1 max=10 placeholder="Enter Priority" value=1>&nbsp;&nbsp;&nbsp;
+<button (click)="addTask(task.value,desc.value,prt.value); task.value='' ; desc.value='';prt.value='' ">Add</button>
+
+
+<br><br>
+<table>
+
+<tr>
+  <th>ID</th>
+  <th>Task</th>
+  <th>Description</th>
+  <th>Priority</th>
+  <th>Finished</th>
+  <th>Actions</th>
+</tr>
+
+<tr *ngFor = 'let todo of todos' align=center> 
+<td>{{todo.id}}</td>
+<td>{{todo.task}}</td>
+<td>{{todo.desc}}</td>
+<td>{{todo.priority}}</td>
+<td>{{todo.done ? '&#10003;' : '&#10005;'}}</td>
+<td>
+  <button (click)='editTodo(todo)'>Edit</button>&nbsp;&nbsp;
+  <button (click)='deleteTodo(todo)'>Delete</button>
+</td>
+</tr>
+
+
+</table>
+
+<h2>Deleted Tasks</h2>
+
+<table id="deltask">
+
+  <tr>
+    <th>ID</th>
+    <th>Task</th>
+    <th>Description</th>
+    <th>Priority</th>
+    <th>Finished</th>
+  </tr>
+  
+  <tr *ngFor = 'let todo of deltodos' align=center> 
+    <td>{{todo.id}}</td>
+    <td>{{todo.task}}</td>
+    <td>{{todo.desc}}</td>
+    <td>{{todo.priority}}</td>
+    <td>{{todo.done ? '&#10003;' : '&#10005;'}}</td>
+  </tr>
+  
+  
+  </table>
